@@ -15,7 +15,7 @@ Principal Software Engineer, 2026 – present. A research and sermon-preparation
 - **How it works:** answers come from retrieved sources, not from a model's memory. Hybrid search runs over a corpus of hundreds of thousands of sermon transcripts and tens of thousands of other works; several models from two providers each take the job they measured best at for the cost; and every quotation is checked against its source text on the server before it reaches the reader.
 - **Evaluation:** a four-layer harness run against production (retrieval, tool selection, end to end, faithfulness), about 600 checks, with a per-claim faithfulness judge and a CI gate that fails on regression.
 - **Size:** about 198,000 lines, 79 edge functions, 79 Playwright suites.
-- Source is private (business code). I'm glad to walk through it live.
+- Source is private (business code).
 
 ### SRF Orders — [srforders.com](https://srforders.com)
 
@@ -24,7 +24,7 @@ B2B wholesale ordering platform for Silk Road Fibers (JL Canvas Co.), live since
 - **Integrations:** QuickBooks Online (OAuth, two-way sync of customers, products and pricing, invoice and payment push, inventory adjustments), Square (card on file, ACH, refunds, a nightly settlement check), ShippingEasy (signed requests, labels, costs read back into the invoice), transactional email.
 - **Quality:** 618 tests run against a real database and the accounting vendor's sandbox. Mutation testing gates every inventory-touching push. 43 production deploys in the first 103 days.
 - **Size:** about 42,000 lines of application code.
-- Source is private (client code). Walkthrough on request.
+- Source is private (client code).
 
 ### benjenkinsphotos.com — [benjenkinsphotos.com](https://benjenkinsphotos.com)
 
