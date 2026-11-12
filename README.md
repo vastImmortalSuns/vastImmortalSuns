@@ -4,26 +4,26 @@ Full-stack software engineer in Seattle. Seven years of production work: four at
 
 [benjenkinsdesign.org](https://benjenkinsdesign.org) · [LinkedIn](https://www.linkedin.com/in/benjamin-jenkins) · benjenkinswebdesign@gmail.com
 
+**What I work in:** TypeScript and JavaScript, React and Next.js, Node, Python, C# and .NET, Java. Postgres, MySQL, SQL Server, DynamoDB. AWS and Supabase. The OpenAI and Anthropic APIs, retrieval-augmented generation, and evaluation harnesses for LLM features. Payment, accounting and shipping integrations.
+
 ## Work you can open
 
 ### Preachly — [platform.preachlyai.com](https://platform.preachlyai.com/)
 
-Principal Software Engineer, 2025 – present. A research and sermon-preparation platform for pastors: a retrieval-grounded AI research assistant over a theological corpus, a "librarian" over each pastor's own sermons, generators for discussion guides and sermon notes, and an atlas of churches, sermons and podcasts. Subscription SaaS with Stripe billing and an admin back office.
+Principal Software Engineer, 2026 – present. A research and sermon-preparation platform for pastors: an AI research assistant grounded in a large theological corpus, a "librarian" over each pastor's own sermons, generated study materials, and an atlas of churches, sermons and podcasts. Subscription SaaS with billing and an admin back office.
 
-- **Data:** 83 GB Postgres with pgvector. 335,000 sermon transcripts from 16,700 churches (about 1.9 billion words), 20,600 churches across 91 countries, 40,000 transcribed podcast episodes, 2.9 million embedded sermon chunks.
-- **AI:** 11 models across 31 functions, each placed by measured cost and latency: gpt-5-mini on the generation loops, gpt-5-nano on reranking and rewrites, gpt-5 and Claude Opus and Sonnet 5.5 only where a measured quality gap paid for them. Hybrid vector and full-text retrieval, tool-calling agents with five skill registries, and server-side verbatim-quotation gating so the model never recites a source it can't back.
-- **Evaluation:** a four-layer harness run against production (retrieval SQL, tool selection, end to end, faithfulness), about 600 checks. The faithfulness judge scores every cited claim against the exact chunk the model saw: 90.9% baseline, CI fails on a drop of more than 3 points. The fabricated-quotation fix took sermon-quote answers from 3 of 13 clean to 13 of 13.
-- **Stack:** React 18, TypeScript, Vite, Tailwind; Supabase (Postgres, Auth, Deno edge functions, pg_cron); OpenAI Responses API; Anthropic Claude; Stripe, Resend. About 198,000 lines, 79 edge functions, 79 Playwright suites.
+- **How it works:** answers come from retrieved sources, not from a model's memory. Hybrid search runs over a corpus of hundreds of thousands of sermon transcripts and tens of thousands of other works; several models from two providers each take the job they measured best at for the cost; and every quotation is checked against its source text on the server before it reaches the reader.
+- **Evaluation:** a four-layer harness run against production (retrieval, tool selection, end to end, faithfulness), about 600 checks, with a per-claim faithfulness judge and a CI gate that fails on regression.
+- **Size:** about 198,000 lines, 79 edge functions, 79 Playwright suites.
 - Source is private (business code). I'm glad to walk through it live.
 
 ### SRF Orders — [srforders.com](https://srforders.com)
 
-B2B wholesale ordering platform for Silk Road Fibers (JL Canvas Co.), live since August 2026. A solo build. Retailers browse the catalog, order, and pay by card on file or on Net-60 terms; staff run fulfilment, inventory, billing and accounts; QuickBooks Online stays the system of record, synced both ways.
+B2B wholesale ordering platform for Silk Road Fibers (JL Canvas Co.), live since August 2026. A solo build. Retailers browse the catalog, order, and pay by card on file or on terms; staff run fulfilment, inventory, billing and accounts; the accounting system stays the system of record, synced both ways.
 
-- **Production:** $154,859 across 113 payments charged through the app via Square since launch; 1,582 products synced from QuickBooks; 34,726 pieces on open orders.
-- **Integrations:** QuickBooks Online (OAuth, two-way sync, invoice and payment push, inventory adjustments), Square (card on file, ACH, refunds, a nightly settlement check), ShippingEasy (HMAC-signed requests, labels), Resend.
-- **Quality:** 618 tests run against a real MySQL database and the Intuit sandbox. Mutation testing (1,090 mutants over the inventory modules) gates every inventory-touching push. 43 production deploys in the first 103 days.
-- **Stack:** Next.js 16, React 19, TypeScript, Prisma 7 on MySQL, Tailwind v4, Zod; GitHub Actions; Hostinger. 42,000 lines of application code.
+- **Integrations:** QuickBooks Online (OAuth, two-way sync of customers, products and pricing, invoice and payment push, inventory adjustments), Square (card on file, ACH, refunds, a nightly settlement check), ShippingEasy (signed requests, labels, costs read back into the invoice), transactional email.
+- **Quality:** 618 tests run against a real database and the accounting vendor's sandbox. Mutation testing gates every inventory-touching push. 43 production deploys in the first 103 days.
+- **Size:** about 42,000 lines of application code.
 - Source is private (client code). Walkthrough on request.
 
 ### benjenkinsphotos.com — [benjenkinsphotos.com](https://benjenkinsphotos.com)
@@ -44,7 +44,7 @@ I've also run SEO for three of them for more than a year each: each reached the 
 
 ## Working with AI models
 
-I've put more than 1,000 hours into building with OpenAI's and Anthropic's models, GitHub Copilot and Lovable. Preachly is where that shows: models chosen by measurement rather than by default (gpt-5-nano as a support judge agreed with gpt-5-mini on only 29% of verdicts, so it lost that job), structural fixes where a better model would only make a failure rarer, and an evaluation harness so every prompt and model change is compared run against run. The photography site above was built and shipped with Claude Opus 5 and 5.5.
+I've put more than 1,000 hours into building with OpenAI's and Anthropic's models, GitHub Copilot and Lovable. Preachly is where that shows: models chosen by measurement rather than by default (a cheaper model lost its judging job after agreeing with the baseline on under a third of verdicts), structural fixes where a better model would only make a failure rarer, and an evaluation harness so every prompt and model change is compared run against run. The photography site above was built and shipped with Claude Opus 5 and 5.5.
 
 ## Before 2023
 
