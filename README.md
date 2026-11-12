@@ -10,7 +10,7 @@ Full-stack software engineer in Seattle. Seven years of production work: four at
 
 ### Preachly — [platform.preachlyai.com](https://platform.preachlyai.com/)
 
-Principal Software Engineer, 2026 – present. A research and sermon-preparation platform for pastors: an AI research assistant grounded in a large theological corpus, a "librarian" over each pastor's own sermons, generated study materials, and an atlas of churches, sermons and podcasts. Subscription SaaS with billing and an admin back office.
+Lead Software Engineer, 2026 – present. A research and sermon-preparation platform for pastors: an AI research assistant grounded in a large theological corpus, a "librarian" over each pastor's own sermons, generated study materials, and an atlas of churches, sermons and podcasts. Subscription SaaS with billing and an admin back office.
 
 - **How it works:** answers come from retrieved sources, not from a model's memory. Hybrid search runs over a corpus of hundreds of thousands of sermon transcripts and tens of thousands of other works; several models from two providers each take the job they measured best at for the cost; and every quotation is checked against its source text on the server before it reaches the reader.
 - **Evaluation:** a four-layer harness run against production (retrieval, tool selection, end to end, faithfulness), about 600 checks, with a per-claim faithfulness judge and a CI gate that fails on regression.
